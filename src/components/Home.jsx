@@ -1,7 +1,4 @@
 import React from 'react';
-import Configuration from './Configuration';
-
-
 class Home extends React.Component {
     render() {
     return(

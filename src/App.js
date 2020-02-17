@@ -9,16 +9,16 @@ import './App.css';
 import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
+import './reducers'
+import {store} from './store'
 
 export default class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = { name : "" }
-    this._getName = this._getName.bind(this)
+  
   }
-  _getName(e) {
-    this.setState({...this.state, name: e});
-  }
+  
   render() {
   return ( 
   
@@ -44,10 +44,10 @@ export default class App extends React.Component{
             <About />
           </Route>
           <Route path="/conf">
-            <Configuration name = {this._getName}/>
+            <Configuration/>
           </Route>
           <Route path="/">
-            <Home name = {this.state.name}/>
+            <Home name = {store.getState().name}/>
           </Route>
         </Switch>
       </div>
