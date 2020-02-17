@@ -10,9 +10,16 @@ import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
 
-
-
-function App() {
+export default class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = { name : "" }
+    this._getName = this._getName.bind(this)
+  }
+  _getName(e) {
+    this.setState({...this.state, name: e});
+  }
+  render() {
   return ( 
   
   <Router>
@@ -37,15 +44,13 @@ function App() {
             <About />
           </Route>
           <Route path="/conf">
-            <Configuration />
+            <Configuration name = {this._getName}/>
           </Route>
           <Route path="/">
-            <Home />
+            <Home name = {this.state.name}/>
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-export default App;
+}}
