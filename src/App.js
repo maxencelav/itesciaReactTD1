@@ -1,68 +1,50 @@
-import React from 'react';
+import React, {Children} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useParams
 } from 'react-router-dom';
 
-export default function Example() {
+export default function ParamsExample() {
   return(
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to="/accueil">Acceuil</Link>
-            </li>
-            <li>
-              <Link to="/config">Configuration</Link>
-            </li>
-            <li>
-              <Link to="/aPropos">À propos</Link>
-            </li>
-          </ul>
-          <hr />
-          <Switch>
-            <Route exact path="/accueil">
-              {/* eslint-disable-next-line react/jsx-no-undef */}
-              <Accueil />
-            </Route>
-            <Route path="/Config">
-              {/* eslint-disable-next-line react/jsx-no-undef */}
-              <Config />
-            </Route>
-            <Route path="/aPropos">
-              {/* eslint-disable-next-line react/jsx-no-undef */}
-              <APropos />
-            </Route>
-          </Switch>
+
+          <h2>Account</h2>
+
+            <ul>
+                <li>
+                    <Link to="/accueil"> Accueil </Link>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <Link to="/config"> Config </Link>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <Link to="/a-propos"> À Propos </Link>
+                </li>
+            </ul>
+
+            <switch>
+                {/* eslint-disable-next-line react/jsx-no-undef */}
+                <Route path="/:id" children = {< Child />} />
+            </switch>
         </div>
       </Router>
   );
 }
 
-function Accueil() {
-    return (
+function Child(){
+    let { id } = useParams();
+    return(
         <div>
-            <h2>Accueil</h2>
+            <h3>ID: {id}</h3>
         </div>
     );
 }
-
-function Config() {
-    return (
-        <div>
-            <h2>Configuration</h2>
-        </div>
-    );
-}
-
-function APropos() {
-    return (
-        <div>
-            <h2>À Propos</h2>
-        </div>
-    );
-}
-
 
