@@ -12,6 +12,7 @@ import Configuration from './components/Configuration'
 import Home from './components/Home'
 import './reducers'
 import {store} from './store'
+import MiniGame from "./components/MiniGame";
 
 export default class App extends React.Component{
   constructor(props) {
@@ -22,7 +23,7 @@ export default class App extends React.Component{
 
   render() {
   return (
-  <Provider store={store}>
+  <Provider store={ store }>
   <Router>
       <div>
         <nav>
@@ -32,6 +33,9 @@ export default class App extends React.Component{
             </li>
             <li>
               <Link to="/conf">Configuration</Link>
+            </li>
+            <li>
+              <Link to="/minigame">Minigame</Link>
             </li>
             <li>
               <Link to="/about">À propos</Link>
@@ -46,6 +50,9 @@ export default class App extends React.Component{
           </Route>
           <Route path="/conf">
             <Configuration/>
+          </Route>
+          <Route path="/minigame">
+            <MiniGame/>
           </Route>
           <Route path="/">
             <Home name = {store.getState().name}/>
