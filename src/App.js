@@ -36,6 +36,9 @@ export default class App extends React.Component{
               <Link to="/conf">Configuration</Link>
             </li>
             <li>
+              <Link to="/game">Jeu des nombres</Link>
+            </li>
+            <li>
               <Link to="/about">À propos</Link>
             </li>
 
@@ -49,6 +52,9 @@ export default class App extends React.Component{
           </Route>
           <Route path="/conf">
             <Configuration/>
+          </Route>
+          <Route path="/game">
+            <Game/>
           </Route>
           <Route path="/">
             <Home name = {store.getState().name}/>
