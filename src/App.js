@@ -9,6 +9,8 @@ import './App.css';
 import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
+import Game from './components/Game'
+
 import './reducers'
 import {store} from './store'
 import {Provider} from 'react-redux'
@@ -34,8 +36,12 @@ export default class App extends React.Component{
               <Link to="/conf">Configuration</Link>
             </li>
             <li>
+              <Link to="/game">Jeu des nombres</Link>
+            </li>
+            <li>
               <Link to="/about">À propos</Link>
             </li>
+
           </ul>
         </nav>
 
@@ -46,6 +52,9 @@ export default class App extends React.Component{
           </Route>
           <Route path="/conf">
             <Configuration/>
+          </Route>
+          <Route path="/game">
+            <Game/>
           </Route>
           <Route path="/">
             <Home name = {store.getState().name}/>
