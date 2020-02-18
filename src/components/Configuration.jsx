@@ -18,10 +18,9 @@ export default class Configuration extends React.Component {
                     Nom :
                     <input type="text" name="name" />
                 </label>
+                <br/>
                 <input type="submit" value="Envoyer" />
             </form>
         </div>);
         }
 }
-
-const _setName = text => ({ type: "SET_NAME", text });

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,9 +9,11 @@ import './App.css';
 import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
+import Game from './components/Game'
+
 import './reducers'
 import {store} from './store'
-import MiniGame from "./components/MiniGame";
+import {Provider} from 'react-redux'
 
 export default class App extends React.Component{
   constructor(props) {
@@ -23,7 +24,7 @@ export default class App extends React.Component{
 
   render() {
   return (
-  <Provider store={ store }>
+  <Provider store={store}>
   <Router>
       <div>
         <nav>
@@ -35,11 +36,9 @@ export default class App extends React.Component{
               <Link to="/conf">Configuration</Link>
             </li>
             <li>
-              <Link to="/minigame">Minigame</Link>
-            </li>
-            <li>
               <Link to="/about">À propos</Link>
             </li>
+
           </ul>
         </nav>
 
@@ -50,9 +49,6 @@ export default class App extends React.Component{
           </Route>
           <Route path="/conf">
             <Configuration/>
-          </Route>
-          <Route path="/minigame">
-            <MiniGame/>
           </Route>
           <Route path="/">
             <Home name = {store.getState().name}/>
