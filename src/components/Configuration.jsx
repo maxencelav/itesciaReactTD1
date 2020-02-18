@@ -1,6 +1,6 @@
 import React from 'react';
-import {store} from '../store';
-import {setName} from '../actions';
+import {store} from '../redux/store';
+import {setName} from '../redux/actions';
 
 export default class Configuration extends React.Component {
 

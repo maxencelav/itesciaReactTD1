@@ -10,9 +10,10 @@ import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
 import Game from './components/Game'
+import Scores from './components/Scores'
 
-import './reducers'
-import {store} from './store'
+import './redux/reducers'
+import {store} from './redux/store'
 import {Provider} from 'react-redux'
 
 export default class App extends React.Component{
@@ -39,6 +40,9 @@ export default class App extends React.Component{
               <Link to="/game">Jeu des nombres</Link>
             </li>
             <li>
+              <Link to="/scores">Score</Link>
+            </li>
+            <li>
               <Link to="/about">À propos</Link>
             </li>
 
@@ -55,6 +59,9 @@ export default class App extends React.Component{
           </Route>
           <Route path="/game">
             <Game/>
+          </Route>
+          <Route path="/scores">
+            <Scores />
           </Route>
           <Route path="/">
             <Home />
