@@ -1,4 +1,4 @@
-export default (state, action) => {
+export default (state = {}, action) => {
     console.log(action, action.type);
     switch(action.type) {
         case 'SET_NAME': 

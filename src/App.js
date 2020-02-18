@@ -11,6 +11,7 @@ import Configuration from './components/Configuration'
 import Home from './components/Home'
 import './reducers'
 import {store} from './store'
+import {Provider} from 'react-redux'
 
 export default class App extends React.Component{
   constructor(props) {
@@ -21,7 +22,7 @@ export default class App extends React.Component{
   
   render() {
   return ( 
-  
+  <Provider store={store}>
   <Router>
       <div>
         <nav>
@@ -52,5 +53,6 @@ export default class App extends React.Component{
         </Switch>
       </div>
     </Router>
+    </Provider>
   );
 }}
