@@ -9,6 +9,7 @@ import './App.css';
 import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
+import MiniGame from "./components/MiniGame";
 
 export default class App extends React.Component{
   constructor(props) {
@@ -33,6 +34,9 @@ export default class App extends React.Component{
               <Link to="/conf">Configuration</Link>
             </li>
             <li>
+              <Link to="/minigame">MiniGame</Link>
+            </li>
+            <li>
               <Link to="/about">À propos</Link>
             </li>
           </ul>
@@ -45,6 +49,9 @@ export default class App extends React.Component{
           </Route>
           <Route path="/conf">
             <Configuration name = {this._getName}/>
+          </Route>
+          <Route path="/minigame">
+            <MiniGame/>
           </Route>
           <Route path="/">
             <Home name = {this.state.name}/>
