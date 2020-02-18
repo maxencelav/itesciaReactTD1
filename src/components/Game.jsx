@@ -6,6 +6,8 @@ class Game extends React.Component {
         super();
 
         this.randomNumber = this.setRandomNumber();
+        console.log("start : "+ this.randomNumber);
+
         this.tries = 0;
 
         this.state = {
@@ -13,17 +15,17 @@ class Game extends React.Component {
         }
     }
 
-    setRandomNumber () {
+    setRandomNumber() {
         let min = 0;
         let max = 101;
         let nbr = Math.floor(min + Math.random() * (max - min));
-        console.log('nbr', nbr);
         return nbr;
     }
 
     reset() {
-        this.number = this.setRandomNumber();
+        this.randomNumber = this.setRandomNumber();
         this.tries = 0;
+        console.log("reset : "+ this.randomNumber);
     }
 
     handleSubmit(event) {
@@ -32,6 +34,7 @@ class Game extends React.Component {
         let number = parseInt(event.target[0].value);
 
         this.tries++;
+        console.log(this.tries + ": " + number + "&" + this.randomNumber)
         if (number > this.randomNumber) {
             this.setState({...this.state, txt: 'C\'est plus petit !'});
         } else if (number < this.randomNumber) {
