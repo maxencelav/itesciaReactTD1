@@ -9,6 +9,7 @@ import './App.css';
 import About from './components/About'
 import Configuration from './components/Configuration'
 import Home from './components/Home'
+import Score from "./components/Score";
 
 
 
@@ -28,6 +29,9 @@ function App() {
             <li>
               <Link to="/about">À propos</Link>
             </li>
+            <li>
+              <Link to="/score">Score</Link>
+            </li>
           </ul>
         </nav>
 
@@ -35,6 +39,9 @@ function App() {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/score">
+            <Score />
           </Route>
           <Route path="/conf">
             <Configuration />
