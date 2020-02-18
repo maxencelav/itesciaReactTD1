@@ -57,7 +57,7 @@ export default class App extends React.Component{
             <Game/>
           </Route>
           <Route path="/">
-            <Home name = {store.getState().name}/>
+            <Home />
           </Route>
         </Switch>
       </div>
