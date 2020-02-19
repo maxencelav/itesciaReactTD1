@@ -11,18 +11,17 @@ class Scores extends React.Component {
         }
     }
 
+
+
+
     render() {
         const {scores} = this.props;
-        console.log(scores)
-
-
         return (
             <div>
                 <h2>Scores</h2>
                 <ol>
                     {scores.map((score, index) => {
-                        console.log(score)
-
+                        console.log(score, index)
                         return (
                             <li key={index}>{score.name} a deviné {score.number} en {score.tries} essai(s)</li>
                         );

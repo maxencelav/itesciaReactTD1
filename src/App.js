@@ -37,16 +37,40 @@ export default class App extends React.Component {
         const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
         store.dispatch(addScore({
-            name: 'FIRST',
+            name: 'A',
             number: 32,
             tries: 6788906985678678
         }));
 
-      store.dispatch(addScore({
-        name: 'SECOND',
-        number: 78,
-        tries: 5
-      }));
+        store.dispatch(addScore({
+            name: 'B',
+            number: 78,
+            tries: 5
+        }));
+
+        store.dispatch(addScore({
+            name: 'C',
+            number: 56,
+            tries: 9
+        }));
+
+        store.dispatch(addScore({
+            name: 'D',
+            number: 12,
+            tries: 89
+        }));
+
+        store.dispatch(addScore({
+            name: 'E',
+            number: 66,
+            tries: 45
+        }));
+
+        store.dispatch(addScore({
+            name: 'F',
+            number: 34,
+            tries: 90
+        }));
 
         unsubscribe();
 
