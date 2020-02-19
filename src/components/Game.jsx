@@ -26,12 +26,15 @@ class Game extends React.Component {
     }
 
     reset() {
+
         this.randomNumber = this.setRandomNumber();
         this.tries = 0;
         console.log("reset : " + this.randomNumber);
     }
 
     restartGame() {
+        this.addScore(this.props.name, this.randomNumber, -1);
+
         this.setState({...this.state, txt: 'Perdu ! (le nombre était ' + this.randomNumber + ')'});
         this.reset();
     }

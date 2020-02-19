@@ -31,7 +31,7 @@ export default class App extends React.Component {
         }
 
 
-        /* Test des actions */
+        /*/!* Test des actions *!/
         console.log('initial state', store.getState());
 
         const unsubscribe = store.subscribe(() => console.log(store.getState()));
@@ -43,9 +43,9 @@ export default class App extends React.Component {
         }));
 
         store.dispatch(addScore({
-            name: 'B',
-            number: 78,
-            tries: 5
+        name: 'B',
+        number: 78,
+        tries: 5
         }));
 
         store.dispatch(addScore({
@@ -73,7 +73,7 @@ export default class App extends React.Component {
         }));
 
         unsubscribe();
-
+*/
     }
 
 
