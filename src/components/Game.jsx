@@ -14,7 +14,7 @@ class Game extends React.Component {
         this.tries = 0;
 
         this.state = {
-            txt: ''
+            scores: []
         }
     }
 
